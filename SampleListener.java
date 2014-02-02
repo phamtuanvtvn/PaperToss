@@ -11,9 +11,12 @@ import com.leapmotion.leap.*;
 import com.leapmotion.leap.Gesture.State;
 
 class SampleListener extends Listener {
-
+	SpherePainter painter = null;
 	public void onInit(Controller controller) {
         System.out.println("Initialized");
+        float initialRadius = 2f;
+		painter = new SpherePainter(initialRadius);
+		painter.start();
     }
 
     public void onConnect(Controller controller) {
@@ -63,7 +66,9 @@ class SampleListener extends Listener {
             // Get the hand's sphere radius and palm position
             System.out.println("Hand sphere radius: " + hand.sphereRadius()
                              + " mm, palm position: " + hand.palmPosition());
-
+            
+            painter.refresh(hand.sphereRadius());
+            
             // Get the hand's normal vector and direction
             Vector normal = hand.palmNormal();
             Vector direction = hand.direction();
