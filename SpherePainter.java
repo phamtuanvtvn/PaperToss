@@ -50,6 +50,9 @@ public class SpherePainter extends SimpleApplication {
 	}
 
 	public void refresh(float radius) {
+		if(radius < 1.0f){
+			radius = 1.0f;
+		}
 		this.scale = radius/this.radius;
 		this.radius = radius;
 	}
