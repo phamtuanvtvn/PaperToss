@@ -15,7 +15,7 @@ public class ShinyRockSphere extends Geometry implements UpdatableShape {
 	private float scale = 1;
 	private float posX = 0;
 	private float posY = 2;
-	private float posZ = -2;
+	private float posZ = -25;
 	
 	public ShinyRockSphere(AssetManager assetManager){
 		this.assetManager = assetManager;
@@ -61,5 +61,17 @@ public class ShinyRockSphere extends Geometry implements UpdatableShape {
 		this.posX = posX;
 		this.posY = posY;
 		this.posZ = posZ;
+	}
+
+	public float getPosX() {
+		return posX;
+	}
+
+	public float getPosY() {
+		return posY;
+	}
+
+	public float getPosZ() {
+		return posZ;
 	}
 }

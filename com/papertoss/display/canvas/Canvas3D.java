@@ -25,6 +25,7 @@ public class Canvas3D extends SimpleApplication {
 		sun.setDirection(new Vector3f(1, 0, -2).normalizeLocal());
 		sun.setColor(ColorRGBA.White);
 		rootNode.addLight(sun);
+		this.getCamera().setLocation(new Vector3f(0, 5, 20));
 	}
 	
 	@Override	
